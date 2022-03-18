@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #fff">
+  <head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1"
+    />
+    <link rel="icon" type="image/png" href="./favicon.svg" />
+    <style>
+      #grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        column-gap: 20px;
+      }
+
+      @supports (grid-template-columns: subgrid) {
+        #grid-container {
+          grid-auto-rows: fit-content(12rem) minmax(10rem, 14rem) auto; /* create grid rows */
+        }
+      }
+
+      .grid-item {
+        display: grid;
+        border: 1px solid black;
+        grid-template-rows: fit-content(12rem) minmax(10rem, 14rem) auto;
+      }
+
+      @supports (grid-template-columns: subgrid) {
+        .grid-item {
+          grid-template-columns: subgrid;
+          grid-template-rows: subgrid;
+          grid-row: span 3;
+        } 
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <main id="grid-container">
+      <div class="grid-item">
+        <h1>Item 1</h3>
+        <div style="height: 100px; width: 200px; background-color: beige"></div>
+        <aside>lekker kleur</aside>
+      </div>
+      <div class="grid-item">
+        <h2>Item 2</h3>
+        <div style="height: 85px; width: 200px; background-color: brown"></div>
+        <aside>semi lekkere kleur</aside>
+      </div>
+      <div class="grid-item">
+        <h3>Item met lange texten wat zo 3</h3>
+        <div
+          style="height: 65px; width: 200px; background-color: burlywood"
+        ></div>
+        <aside>boom</aside>
+      </div>
+    </main>
+  </body>
+</html>
